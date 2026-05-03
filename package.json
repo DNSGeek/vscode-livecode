@@ -1,0 +1,91 @@
+{
+  "name": "livecode-script",
+  "displayName": "LiveCode Script",
+  "description": "Syntax highlighting, snippets, and language support for LiveCode Script (.livecodescript, .livecode, .irev)",
+  "version": "0.1.0",
+  "publisher": "gopher-broke-software",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "livecode",
+    "livecode script",
+    "xtalk",
+    "hypertalk",
+    "openxtalk"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DNSGeek/livecode-vscode"
+  },
+  "license": "MIT",
+  "contributes": {
+    "languages": [
+      {
+        "id": "livecode",
+        "aliases": ["LiveCode Script", "livecode", "LiveCode"],
+        "extensions": [
+          ".livecodescript",
+          ".livecode",
+          ".irev",
+          ".rev"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/livecode-light.svg",
+          "dark": "./icons/livecode-dark.svg"
+        }
+      },
+      {
+        "id": "livecodebuilder",
+        "aliases": ["LiveCode Builder", "lcb"],
+        "extensions": [
+          ".lcb"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "livecode",
+        "scopeName": "source.livecode",
+        "path": "./syntaxes/livecode.tmLanguage.json"
+      },
+      {
+        "language": "livecodebuilder",
+        "scopeName": "source.livecodebuilder",
+        "path": "./syntaxes/livecodebuilder.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "livecode",
+        "path": "./snippets/livecode.code-snippets"
+      },
+      {
+        "language": "livecodebuilder",
+        "path": "./snippets/livecode.code-snippets"
+      }
+    ],
+    "configuration": {
+      "title": "LiveCode Script",
+      "properties": {
+        "livecode.serverPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the LiveCode server engine binary (for running scripts headlessly)"
+        },
+        "livecode.defaultFileExtension": {
+          "type": "string",
+          "default": ".livecodescript",
+          "enum": [".livecodescript", ".livecode", ".rev"],
+          "description": "Default file extension for new LiveCode Script files"
+        }
+      }
+    }
+  }
+}

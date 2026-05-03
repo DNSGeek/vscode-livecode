@@ -1,0 +1,363 @@
+{
+  "Handler - on message": {
+    "prefix": ["on", "handler"],
+    "body": [
+      "on ${1:handlerName}",
+      "\t${0}",
+      "end ${1:handlerName}"
+    ],
+    "description": "Create a message handler"
+  },
+  "Handler - function": {
+    "prefix": ["function", "fn"],
+    "body": [
+      "function ${1:functionName}(${2:params})",
+      "\t${0}",
+      "\treturn ${3:result}",
+      "end ${1:functionName}"
+    ],
+    "description": "Create a function handler"
+  },
+  "Handler - on mouseUp": {
+    "prefix": "mouseUp",
+    "body": [
+      "on mouseUp",
+      "\t${0}",
+      "end mouseUp"
+    ],
+    "description": "Mouse up handler"
+  },
+  "Handler - on mouseDown": {
+    "prefix": "mouseDown",
+    "body": [
+      "on mouseDown",
+      "\t${0}",
+      "end mouseDown"
+    ],
+    "description": "Mouse down handler"
+  },
+  "Handler - on openCard": {
+    "prefix": "openCard",
+    "body": [
+      "on openCard",
+      "\t${0}",
+      "end openCard"
+    ],
+    "description": "Open card handler"
+  },
+  "Handler - on closeCard": {
+    "prefix": "closeCard",
+    "body": [
+      "on closeCard",
+      "\t${0}",
+      "end closeCard"
+    ],
+    "description": "Close card handler"
+  },
+  "Handler - on openStack": {
+    "prefix": "openStack",
+    "body": [
+      "on openStack",
+      "\t${0}",
+      "end openStack"
+    ],
+    "description": "Open stack handler"
+  },
+  "Handler - on preOpenStack": {
+    "prefix": "preOpenStack",
+    "body": [
+      "on preOpenStack",
+      "\t${0}",
+      "end preOpenStack"
+    ],
+    "description": "Pre-open stack handler"
+  },
+  "Handler - getprop": {
+    "prefix": "getprop",
+    "body": [
+      "getProp ${1:propName}",
+      "\t${0}",
+      "\treturn ${2:value}",
+      "end ${1:propName}"
+    ],
+    "description": "Get custom property handler"
+  },
+  "Handler - setprop": {
+    "prefix": "setprop",
+    "body": [
+      "setProp ${1:propName} ${2:pValue}",
+      "\t${0}",
+      "end ${1:propName}"
+    ],
+    "description": "Set custom property handler"
+  },
+  "If/Then/Else": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition} then",
+      "\t${0}",
+      "else",
+      "\t",
+      "end if"
+    ],
+    "description": "If/then/else block"
+  },
+  "If/Then (single line)": {
+    "prefix": "ifs",
+    "body": "if ${1:condition} then ${0}",
+    "description": "Single-line if/then"
+  },
+  "Repeat forever": {
+    "prefix": "repforever",
+    "body": [
+      "repeat forever",
+      "\t${0}",
+      "end repeat"
+    ],
+    "description": "Repeat forever loop"
+  },
+  "Repeat for N times": {
+    "prefix": ["repfor", "reptimes"],
+    "body": [
+      "repeat ${1:10} times",
+      "\t${0}",
+      "end repeat"
+    ],
+    "description": "Repeat N times loop"
+  },
+  "Repeat with counter": {
+    "prefix": "repwith",
+    "body": [
+      "repeat with ${1:i} = ${2:1} to ${3:10}",
+      "\t${0}",
+      "end repeat"
+    ],
+    "description": "Repeat with counter loop"
+  },
+  "Repeat while": {
+    "prefix": "repwhile",
+    "body": [
+      "repeat while ${1:condition}",
+      "\t${0}",
+      "end repeat"
+    ],
+    "description": "Repeat while condition"
+  },
+  "Repeat until": {
+    "prefix": "repuntil",
+    "body": [
+      "repeat until ${1:condition}",
+      "\t${0}",
+      "end repeat"
+    ],
+    "description": "Repeat until condition"
+  },
+  "Repeat for each line": {
+    "prefix": "replines",
+    "body": [
+      "repeat for each line ${1:tLine} in ${2:tData}",
+      "\t${0}",
+      "end repeat"
+    ],
+    "description": "Repeat for each line in a variable"
+  },
+  "Repeat for each word": {
+    "prefix": "repwords",
+    "body": [
+      "repeat for each word ${1:tWord} in ${2:tData}",
+      "\t${0}",
+      "end repeat"
+    ],
+    "description": "Repeat for each word in a variable"
+  },
+  "Repeat for each item": {
+    "prefix": "repitems",
+    "body": [
+      "repeat for each item ${1:tItem} in ${2:tData}",
+      "\t${0}",
+      "end repeat"
+    ],
+    "description": "Repeat for each item in a variable"
+  },
+  "Repeat for each key": {
+    "prefix": "repkeys",
+    "body": [
+      "repeat for each key ${1:tKey} in ${2:tArray}",
+      "\t${0}",
+      "end repeat"
+    ],
+    "description": "Repeat for each key in an array"
+  },
+  "Switch/case": {
+    "prefix": "switch",
+    "body": [
+      "switch ${1:tValue}",
+      "\tcase ${2:value1}",
+      "\t\t${0}",
+      "\t\tbreak",
+      "\tcase ${3:value2}",
+      "\t\t",
+      "\t\tbreak",
+      "\tdefault",
+      "\t\t",
+      "end switch"
+    ],
+    "description": "Switch/case block"
+  },
+  "Try/catch": {
+    "prefix": "try",
+    "body": [
+      "try",
+      "\t${0}",
+      "catch ${1:tError}",
+      "\t-- handle error: tError",
+      "end try"
+    ],
+    "description": "Try/catch block"
+  },
+  "Variable declarations": {
+    "prefix": "local",
+    "body": [
+      "local ${1:tVariable}",
+      "${0}"
+    ],
+    "description": "Local variable declaration"
+  },
+  "Global variable declaration": {
+    "prefix": "global",
+    "body": [
+      "global ${1:gVariable}",
+      "${0}"
+    ],
+    "description": "Global variable declaration"
+  },
+  "Put into": {
+    "prefix": "put",
+    "body": "put ${1:value} into ${2:tVariable}",
+    "description": "Put value into variable"
+  },
+  "Read URL": {
+    "prefix": "geturl",
+    "body": [
+      "put url \"${1:http://example.com}\" into ${2:tResponse}",
+      "if the result is not empty then",
+      "\t-- handle error: the result",
+      "end if",
+      "${0}"
+    ],
+    "description": "Fetch a URL into a variable"
+  },
+  "Read file": {
+    "prefix": "readfile",
+    "body": [
+      "open file ${1:tPath} for read",
+      "read from file ${1:tPath} until end",
+      "put it into ${2:tContents}",
+      "close file ${1:tPath}",
+      "${0}"
+    ],
+    "description": "Read entire file into a variable"
+  },
+  "Write file": {
+    "prefix": "writefile",
+    "body": [
+      "open file ${1:tPath} for write",
+      "write ${2:tContents} to file ${1:tPath}",
+      "close file ${1:tPath}",
+      "${0}"
+    ],
+    "description": "Write a variable to a file"
+  },
+  "Answer dialog": {
+    "prefix": "answer",
+    "body": "answer \"${1:message}\"",
+    "description": "Show an answer dialog"
+  },
+  "Answer with buttons": {
+    "prefix": "answerbuttons",
+    "body": [
+      "answer \"${1:message}\" with \"${2:OK}\" or \"${3:Cancel}\"",
+      "if it is \"${2:OK}\" then",
+      "\t${0}",
+      "end if"
+    ],
+    "description": "Answer dialog with button choices"
+  },
+  "Ask dialog": {
+    "prefix": "ask",
+    "body": [
+      "ask \"${1:prompt}\" with \"${2:default}\"",
+      "if it is not empty then",
+      "\tput it into ${3:tAnswer}",
+      "\t${0}",
+      "end if"
+    ],
+    "description": "Ask dialog for user input"
+  },
+  "Send message": {
+    "prefix": "send",
+    "body": "send \"${1:message}\" to ${2:target}",
+    "description": "Send a message to an object"
+  },
+  "Dispatch message": {
+    "prefix": "dispatch",
+    "body": "dispatch \"${1:message}\" to ${2:target} with ${3:params}",
+    "description": "Dispatch a message"
+  },
+  "Set property": {
+    "prefix": "set",
+    "body": "set the ${1:property} of ${2:object} to ${3:value}",
+    "description": "Set an object property"
+  },
+  "Custom property block": {
+    "prefix": "custprop",
+    "body": [
+      "getProp ${1:myProp}",
+      "\treturn the cData[\"${1:myProp}\"] of me",
+      "end ${1:myProp}",
+      "",
+      "setProp ${1:myProp} pValue",
+      "\tset the cData[\"${1:myProp}\"] of me to pValue",
+      "end ${1:myProp}"
+    ],
+    "description": "Custom property get/set pair using cData array"
+  },
+  "LCB - module": {
+    "prefix": "module",
+    "scope": "source.livecodebuilder",
+    "body": [
+      "module ${1:com.example.mymodule}",
+      "",
+      "${0}",
+      "",
+      "end module"
+    ],
+    "description": "LCB module skeleton"
+  },
+  "LCB - widget": {
+    "prefix": "widget",
+    "scope": "source.livecodebuilder",
+    "body": [
+      "widget ${1:com.example.mywidget}",
+      "",
+      "metadata title is \"${2:My Widget}\"",
+      "metadata author is \"${3:Author}\"",
+      "metadata version is \"1.0.0\"",
+      "",
+      "${0}",
+      "",
+      "end widget"
+    ],
+    "description": "LCB widget skeleton"
+  },
+  "LCB - handler": {
+    "prefix": "handler",
+    "scope": "source.livecodebuilder",
+    "body": [
+      "handler ${1:handlerName}(${2:params})",
+      "\t${0}",
+      "end handler"
+    ],
+    "description": "LCB handler definition"
+  }
+}

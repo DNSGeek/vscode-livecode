@@ -1,0 +1,45 @@
+{
+  "comments": {
+    "lineComment": "--",
+    "blockComment": ["/*", "*/"]
+  },
+  "brackets": [
+    ["(", ")"],
+    ["[", "]"]
+  ],
+  "autoClosingPairs": [
+    { "open": "(", "close": ")" },
+    { "open": "[", "close": "]" },
+    { "open": "\"", "close": "\"", "notIn": ["string", "comment"] }
+  ],
+  "surroundingPairs": [
+    ["(", ")"],
+    ["[", "]"],
+    ["\"", "\""]
+  ],
+  "indentationRules": {
+    "increaseIndentPattern": "(?i)^\\s*(on|before|after|function|getprop|setprop|if|else|repeat|try|catch|switch|case|default|private\\s+(on|function))\\b.*$",
+    "decreaseIndentPattern": "(?i)^\\s*(end\\s+\\w+|else|catch|finally|case\\b|default\\b)\\b"
+  },
+  "onEnterRules": [
+    {
+      "beforeText": "(?i)^\\s*(on|before|after|function|getprop|setprop|repeat|if|else|try|catch|switch|case|default)\\b.*$",
+      "action": {
+        "indent": "indent"
+      }
+    },
+    {
+      "beforeText": "(?i)^\\s*(end\\s+\\w+)\\b",
+      "action": {
+        "indent": "outdent"
+      }
+    }
+  ],
+  "wordPattern": "[a-zA-Z_][a-zA-Z0-9_]*",
+  "folding": {
+    "markers": {
+      "start": "(?i)^\\s*(on|before|after|function|getprop|setprop|private\\s+(on|function))\\b",
+      "end": "(?i)^\\s*end\\s+\\w+"
+    }
+  }
+}
